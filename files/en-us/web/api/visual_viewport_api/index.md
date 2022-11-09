@@ -24,7 +24,72 @@ The mobile web contains two viewports, the layout viewport and the visual viewpo
 
 What happens when a web page element needs to be visible on screen regardless of the visible portion of a web page? For example, what if you need a set of image controls to remain on screen regardless of the pinch zoom level of the device? Current browsers vary in how they handle this. The visual viewport lets web developers solve this by positioning elements relative to what's shown on screen.
 
+To access a window's visual viewport, you can obtain a {{domxref("VisualViewport")}} object from the {{domxref("window.visualViewport")}} property. The object includes a set of properties describing the viewport. It also adds two events, /Visual_Viewport_API
+4
+page-type: web-api-overview
+5
+tags:
+6
+  - API
+7
+  - Layout
+8
+  - Overview
+9
+  - Reference
+10
+  - layout viewport
+11
+  - viewport
+12
+  - visual
+13
+  - visual viewport
+14
+browser-compat: api.VisualViewport
+15
+---
+16
+
+17
+{{DefaultAPISidebar("Visual Viewport")}}
+18
+
+19
+The **Visual Viewport API** provides an explicit mechanism for querying and modifying the properties of the window's {{Glossary("visual viewport")}}. The visual viewport is the visual portion of a screen excluding on-screen keyboards, areas outside of a pinch-zoom area, or any other on-screen artifact that doesn't scale with the dimensions of a page.
+20
+
+21
+## Visual Viewport concepts and usage
+22
+
+23
+The mobile web contains two viewports, the layout viewport and the visual viewport. The layout viewport covers all the elements on a page and the visual viewport is what is actually visible on the screen. When the user pinch-zooms into the page, the visual viewport shrinks but the layout viewport is unchanged. User-interface features like the on-screen keyboard (OSK) can shrink the visual viewport without affecting the layout viewport.
+24
+
+25
+What happens when a web page element needs to be visible on screen regardless of the visible portion of a web page? For example, what if you need a set of image controls to remain on screen regardless of the pinch zoom level of the device? Current browsers vary in how they handle this. The visual viewport lets web developers solve this by positioning elements relative to what's shown on screen.
+26
+
+27
 To access a window's visual viewport, you can obtain a {{domxref("VisualViewport")}} object from the {{domxref("window.visualViewport")}} property. The object includes a set of properties describing the viewport. It also adds two events, `onresize` and `onscroll`, that fire whenever the visual viewport changes. These events allow you to position elements relative to the visual viewport that would normally be anchored to the layout viewport.
+28
+
+29
+## Accessing the API
+30
+
+31
+- {{domxref("window.visualViewport")}} {{ReadOnlyInline}}
+32
+  - : A read-only reference to the window's {{domxref("VisualViewport")}} object. If this property doesn't exist, the API is unsupported.
+33
+
+34
+## Interfaces
+35
+
+`onresize` and `onscroll`, that fire whenever the visual viewport changes. These events allow you to position elements relative to the visual viewport that would normally be anchored to the layout viewport.
 
 ## Accessing the API
 
